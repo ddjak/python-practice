@@ -39,3 +39,36 @@ def multiplier_of(number):
 
 multiplywith5 = multiplier_of(5)
 multiplywith5(9)
+
+print('Hello', 'hey', 'wow', end=' ')
+print('World')
+
+def spam(divideBy):
+    try:
+        return 42 / divideBy
+    #except calls out the specific error you're having
+    #and allows you to make it an exception
+    except ZeroDivisionError:
+        print('Error: Invalid argument.')
+
+'''print(spam(2))
+print(spam(12))
+print(spam(0))
+print(spam(1))'''
+
+### Practice Projects
+
+### The Collatz Sequence
+
+def collatz(number):
+	while(number != 1):
+		if(number%2 == 0):
+			print(number//2)
+			return number//2
+		else:
+			print(3*number+1)
+			return 3*number+1
+
+number = int(input())
+
+collatz(number)
