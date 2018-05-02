@@ -22,8 +22,8 @@ while True:
 #keys(), values(), items()
 
 spam = {'color':'red', 'age':42}
-for k, v in spam.items():
-	print("Key: "+k+", Value: "+str(v))
+#for k, v in spam.items():
+#	print("Key: "+k+", Value: "+str(v))
 
 #Get Method
 
@@ -50,3 +50,48 @@ for character in message:
 
 #pprint(count) gives you value for terminal
 #pformat(count) gives you a string value instead of displaying it on a screen
+
+allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
+                'Bob': {'ham sandwiches': 3, 'apples': 2},
+                'Carol': {'cups': 3, 'apple pies': 1}}
+
+def totalBrought(guests, item):
+    numBrought = 0
+    for k, v in guests.items():
+        numBrought = numBrought + v.get(item, 0)
+    return numBrought
+
+#print(totalBrought(allGuests, 'apples'))
+
+###PRACTICE PROJECTS
+
+#Fantasy Game Inventory
+
+inventory = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+
+def showInventory(inventory):
+    numItems = 0
+    print('Inventory:')
+    for k, v in inventory.items():
+        numItems = numItems + v
+        print(str(v) + ' ' + k)
+    print('Total number of items: ' + str(numItems))
+#showInventory(inventory)
+
+
+#List to Dictionary Function for Fantasy Game Inventory
+
+dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+
+#prints out updated inventory once dragonLoot is added
+def addToInventory(inventory, addedItems):
+    for item in addedItems:
+        for k, v in inventory.items(): 
+            if item == k:
+                inventory[item] = inventory[item] + 1
+            else:
+                inventory.setdefault(k, 0)
+    return inventory
+
+addToInventory(inventory, dragonLoot)
+showInventory(inventory)
