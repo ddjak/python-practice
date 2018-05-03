@@ -80,18 +80,19 @@ def showInventory(inventory):
 
 
 #List to Dictionary Function for Fantasy Game Inventory
-
+testInv = {}
 dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
-
+testInv.setdefault('ruby', 1)
+#print(testInv)
 #prints out updated inventory once dragonLoot is added
 def addToInventory(inventory, addedItems):
     for item in addedItems:
         for k, v in inventory.items(): 
             if item == k:
                 inventory[item] = inventory[item] + 1
-            else:
-                inventory.setdefault(k, 0)
+        if item not in inventory:
+            inventory.setdefault(item, 1)
     return inventory
 
 addToInventory(inventory, dragonLoot)
-showInventory(inventory)
+#showInventory(inventory)
