@@ -14,4 +14,5 @@ print('''
 print(r'That\'s good\nWhat\'s new?')
 
 import pyperclip
-#pyperclip.paste() ###Doesn't work. try installing pyperclip on computer. Appendix B
+pyperclip.copy('Hello')
+pyperclip.paste() ###Doesn't work. try installing pyperclip on computer. Appendix B
