@@ -2,7 +2,7 @@
 
 #Files
 
-import os
+import os, shutil
 
 #print(os.path.join('C', 'Users', 'ddjakovic')) ### convert into path string
 
@@ -17,3 +17,6 @@ import imp
 print("Python EXE : " + sys.executable)
 print("Architecture : " + platform.architecture()[0])
 '''
+
+#helloFile = open('C:\\Users\\Minerva\\Desktop\\hello.txt')
+
